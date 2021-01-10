@@ -19,7 +19,7 @@ Each restaurant provides new menu each day.
 
 ## Curl samples: 
 
-### Users with the Admin role:
+### *Users with the Admin role:*
 #### Get all Users:
 curl -s http://localhost:8080/voting/rest/admin/users --user admin@mail.ru:password
 
@@ -38,13 +38,15 @@ curl -s -X DELETE http://localhost:8080/voting/rest/admin/users/100000 --user ad
 #### Update User 100019:
 curl -s -X PUT -d '{"name":"NewUser777", "email":"user777@mail.ru", "password":"password123"}' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/voting/rest/admin/users/100019 --user admin@mail.ru:password
 
+---
 
-### New User:
+### *New User:*
 #### Create User (register):
 curl -s -X POST -d '{"name":"NewUser123", "email":"user123@mail.ru", "password":"password123"}' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/voting/rest/profile/register
 
+---
 
-### Users with the User role:
+### *Users with the User role:*
 #### Get profile:
 curl -s http://localhost:8080/voting/rest/profile --user user2@mail.ru:password
 
@@ -54,8 +56,9 @@ curl -s -X PUT -d '{"name":"User", "email":"user@mail.ru", "password":"password"
 #### Delete profile:
 curl -s -X DELETE http://localhost:8080/voting/rest/profile --user user123@mail.ru:password123
 
+---
 
-### Restaurants with the Admin role:
+### *Restaurants with the Admin role:*
 #### Get Restaurants:
 curl -s http://localhost:8080/voting/rest/admin/restaurants --user admin@mail.ru:password
 
@@ -68,8 +71,9 @@ curl -s -X PUT -d '{"name":"Updated Restaurant"}' -H 'Content-Type: application/
 #### Delete Restaurant 100021:
 curl -s -X DELETE http://localhost:8080/voting/rest/admin/restaurants/100021 --user admin@mail.ru:password
 
+---
 
-### Restaurants with the User role:
+### *Restaurants with the User role:*
 #### Get all Restaurants for today:
 curl -s http://localhost:8080/voting/rest/restaurants --user user@mail.ru:password
 
@@ -82,8 +86,9 @@ curl -s http://localhost:8080/voting/rest/restaurants/100005?date=2021-01-10 --u
 #### Get all Restaurants with a dish for the date 2021-01-10 (you can request the current date):
 curl -s http://localhost:8080/voting/rest/restaurants?date=2021-01-10 --user user@mail.ru:password
 
+---
 
-### Dish with the Admin role:
+### *Dish with the Admin role:*
 #### Get all Dishes for the Restaurant 100005:
 curl -s http://localhost:8080/voting/rest/admin/restaurants/100005/dishes --user admin@mail.ru:password
 
@@ -99,13 +104,15 @@ curl -s -X PUT -d '{"name":"Updated Dish","price":199,"date":"2021-01-10"}' -H '
 #### Delete Dish 100022 in the Restaurant 100005:
 curl -s -X DELETE http://localhost:8080/voting/rest/admin/restaurants/100005/dishes/100022 --user admin@mail.ru:password
 
+---
 
-### Voting with the Admin role:
+### *Voting with the Admin role:*
 #### Get all Votes for today:
 curl -s http://localhost:8080/voting/rest/admin/users/votes/ --user admin@mail.ru:password
 
+---
 
-### Voting with the User role:
+### *Voting with the User role:*
 #### Vote for the Restaurant 100005:
 curl -s -X POST -d '{"restaurantId":"100005"}' -H "Content-Type:application/json;charset=UTF-8" http://localhost:8080/voting/rest/votes --user user@mail.ru:password
 
