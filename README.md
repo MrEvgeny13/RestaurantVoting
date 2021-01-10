@@ -1,6 +1,6 @@
 # Voting System for restaurants
 
-**Topjava's graduation project.**
+**TopJava's graduation project.**
 
 Designing and implementing a REST API using Hibernate/Spring/SpringMVC *without frontend*.
 
