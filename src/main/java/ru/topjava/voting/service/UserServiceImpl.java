@@ -24,7 +24,7 @@ import static ru.topjava.voting.util.ValidationUtil.checkNotFoundWithId;
 @Service("userService")
 public class UserServiceImpl implements UserService, UserDetailsService {
 
-    private static final Sort SORT_NAME = new Sort(Sort.Direction.ASC, "name", "email");
+    private static final Sort SORT_NAME = Sort.by(Sort.Direction.ASC, "name", "email");
 
     @Autowired
     private UserRepository repository;
