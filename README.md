@@ -20,7 +20,7 @@ Each restaurant provides new menu each day.
 ## Curl samples: 
 
 ### Users with the Admin role:
-####Get all Users:
+#### Get all Users:
 curl -s http://localhost:8080/voting/rest/admin/users --user admin@mail.ru:password
 
 #### Get User 100000:
@@ -100,12 +100,12 @@ curl -s -X PUT -d '{"name":"Updated Dish","price":199,"date":"2021-01-10"}' -H '
 curl -s -X DELETE http://localhost:8080/voting/rest/admin/restaurants/100005/dishes/100022 --user admin@mail.ru:password
 
 
-### Vote with the Admin role:
+### Voting with the Admin role:
 #### Get all Votes for today:
 curl -s http://localhost:8080/voting/rest/admin/users/votes/ --user admin@mail.ru:password
 
 
-### Vote with the User role:
+### Voting with the User role:
 #### Vote for the Restaurant 100005:
 curl -s -X POST -d '{"restaurantId":"100005"}' -H "Content-Type:application/json;charset=UTF-8" http://localhost:8080/voting/rest/votes --user user@mail.ru:password
 
