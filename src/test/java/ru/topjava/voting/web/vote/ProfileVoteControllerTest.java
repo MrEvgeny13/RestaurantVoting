@@ -93,8 +93,8 @@ class ProfileVoteControllerTest extends AbstractControllerTest {
     @Test
     void getBetween() throws Exception {
         mockMvc.perform(get(REST_URL + "filter")
-                .param("startDate", "2019-12-23")
-                .param("endDate", "2019-12-24")
+                .param("startDate", "2020-12-22")
+                .param("endDate", "2020-12-23")
                 .with(TestUtil.userHttpBasic(UserTestData.USER)))
                 .andExpect(status().isOk())
                 .andDo(print())

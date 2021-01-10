@@ -124,11 +124,11 @@ Functionality user:
 #### get Restaurant 100003 for today
 `curl -s http://localhost:8080/graduation/rest/restaurants/100003 --user user@mail.ru:password`
 
-#### get Restaurant 100002 with dish for date 2019-11-23
-`curl -s http://localhost:8080/graduation/rest/restaurants/100002?date=2019-11-23 --user user@mail.ru:password`
+#### get Restaurant 100002 with dish for date 2020-12-22
+`curl -s http://localhost:8080/graduation/rest/restaurants/100002?date=2020-12-22 --user user@mail.ru:password`
 
-#### get All Restaurants with dish for date 2019-11-23
-`curl -s http://localhost:8080/graduation/rest/restaurants?date=2019-11-23 --user user@mail.ru:password`
+#### get All Restaurants with dish for date 2020-12-22
+`curl -s http://localhost:8080/graduation/rest/restaurants?date=2020-12-22 --user user@mail.ru:password`
 
 ## Dish with Admin role:
 
@@ -139,10 +139,10 @@ Functionality user:
 `curl -s http://localhost:8080/graduation/rest/admin/restaurants/100003/dishes/100008 --user admin@mail.ru:password`
 
 #### create Dish
-`curl -s -X POST -d '{"name":"New dish","price":100,"date":"2019-12-08"}' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/graduation/rest/admin/restaurants/100003/dishes --user admin@mail.ru:password`
+`curl -s -X POST -d '{"name":"New dish","price":100,"date":"2020-12-08"}' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/graduation/rest/admin/restaurants/100003/dishes --user admin@mail.ru:password`
 
 #### update Dish 100005
-`curl -s -X PUT -d '{"name":"Updated_DISH1","price":200,"date":"2019-12-08"}' -H 'Content-Type: application/json' http://localhost:8080/graduation/rest/admin/restaurants/100003/dishes/100005 --user admin@mail.ru:password`
+`curl -s -X PUT -d '{"name":"Updated_DISH1","price":200,"date":"2020-12-08"}' -H 'Content-Type: application/json' http://localhost:8080/graduation/rest/admin/restaurants/100003/dishes/100005 --user admin@mail.ru:password`
 
 #### delete Dish 100008
 `curl -s -X DELETE http://localhost:8080/graduation/rest/admin/restaurants/100003/dishes/100008 --user admin@mail.ru:password`
@@ -164,4 +164,4 @@ Functionality user:
 `curl -s http://localhost:8080/graduation/rest/votes/ --user user@mail.ru:password`
 
 #### filter Votes
-`curl -s "http://localhost:8080/graduation/rest/votes/filter?startDate=2019-10-01&endDate=2019-12-29" --user user@mail.ru:password`
+`curl -s "http://localhost:8080/graduation/rest/votes/filter?startDate=2020-10-01&endDate=2020-12-30" --user user@mail.ru:password`

@@ -28,22 +28,22 @@ class ProfileRestaurantControllerTest extends AbstractControllerTest {
 
     @Test
     void getAllByDate() throws Exception{
-        mockMvc.perform(get(REST_URL + "?date=2019-11-23")
+        mockMvc.perform(get(REST_URL + "?date=2020-12-22")
                 .with(TestUtil.userHttpBasic(UserTestData.USER)))
                 .andExpect(status().isOk())
                 .andDo(print())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
-        assertMatch(restaurantService.getAll(of(2019, Month.NOVEMBER, 23)), Arrays.asList(RestaurantTestData.RESTAURANT1));
+        assertMatch(restaurantService.getAll(of(2020, Month.DECEMBER, 22)), Arrays.asList(RestaurantTestData.RESTAURANT1));
     }
 
     @Test
     void getAllByIdAndByDate() throws Exception{
-        mockMvc.perform(MockMvcRequestBuilders.get(REST_URL + RestaurantTestData.RESTAURANT1_ID  + "?date=2019-11-23")
+        mockMvc.perform(MockMvcRequestBuilders.get(REST_URL + RestaurantTestData.RESTAURANT1_ID  + "?date=2020-12-22")
                 .with(TestUtil.userHttpBasic(UserTestData.USER)))
                 .andExpect(status().isOk())
                 .andDo(print())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
-        assertMatch(restaurantService.getAllForId(of(2019, Month.NOVEMBER, 23), RestaurantTestData.RESTAURANT1_ID), Arrays.asList(RestaurantTestData.RESTAURANT1));
+        assertMatch(restaurantService.getAllForId(of(2020, Month.DECEMBER, 22), RestaurantTestData.RESTAURANT1_ID), Arrays.asList(RestaurantTestData.RESTAURANT1));
     }
 
     @Test

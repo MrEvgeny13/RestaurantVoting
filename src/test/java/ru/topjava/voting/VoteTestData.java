@@ -18,10 +18,10 @@ public class VoteTestData {
     public static final int VOTE5 = START_SEQ + 17;
     private static final int VOTE6 = START_SEQ + 18;
 
-    public static final VoteTo VOTE1_TO = new VoteTo(VOTE1, LocalDate.of(2019, 12, 23), 100004);
-    public static final VoteTo VOTE2_TO = new VoteTo(VOTE2, LocalDate.of(2019, 12, 23), 100004);
-    public static final VoteTo VOTE3_TO = new VoteTo(VOTE3, LocalDate.of(2019, 12, 24), 100003);
-    public static final VoteTo VOTE4_TO = new VoteTo(VOTE4, LocalDate.of(2019, 12, 24), 100003);
+    public static final VoteTo VOTE1_TO = new VoteTo(VOTE1, LocalDate.of(2020, 12, 22), 100004);
+    public static final VoteTo VOTE2_TO = new VoteTo(VOTE2, LocalDate.of(2020, 12, 22), 100004);
+    public static final VoteTo VOTE3_TO = new VoteTo(VOTE3, LocalDate.of(2020, 12, 23), 100003);
+    public static final VoteTo VOTE4_TO = new VoteTo(VOTE4, LocalDate.of(2020, 12, 23), 100003);
     public static final VoteTo VOTE5_TO = new VoteTo(VOTE5, LocalDate.now(), 100003);
     public static final VoteTo VOTE6_TO = new VoteTo(VOTE6, LocalDate.now(), 100004);
 
