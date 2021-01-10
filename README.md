@@ -19,6 +19,8 @@ Each restaurant provides new menu each day.
 
 ## Curl samples: 
 
+---
+
 ### *Users with the Admin role:*
 #### Get all Users:
 curl -s http://localhost:8080/voting/rest/admin/users --user admin@mail.ru:password
