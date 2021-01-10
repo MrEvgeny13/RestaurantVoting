@@ -52,7 +52,7 @@ class AdminUserControllerTest extends AbstractControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.get(REST_URL + 1)
                 .with(TestUtil.userHttpBasic(ADMIN)))
                 .andDo(print())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.detail").value("User not found by id 1"));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.detail").value("User is not found by id: 1"));
     }
 
     @Test
@@ -102,7 +102,7 @@ class AdminUserControllerTest extends AbstractControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .with(TestUtil.userHttpBasic(ADMIN))
                 .content(JsonUtil.writeValue(created)))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.detail").value(created + " must be new (id=null)"));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.detail").value(created + " should be new (id = null)"));
     }
 
 }

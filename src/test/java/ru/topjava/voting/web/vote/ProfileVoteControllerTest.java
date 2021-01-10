@@ -35,7 +35,7 @@ class ProfileVoteControllerTest extends AbstractControllerTest {
                 .content(JsonUtil.writeValue(created))
                 .with(TestUtil.userHttpBasic(UserTestData.USER)))
                 .andDo(print())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.detail").value("Have you already voted today"));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.detail").value("You have already voted today"));
     }
 
     @Test
@@ -77,7 +77,7 @@ class ProfileVoteControllerTest extends AbstractControllerTest {
                 .content(JsonUtil.writeValue(updated))
                 .with(TestUtil.userHttpBasic(UserTestData.USER)))
                 .andDo(print())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.detail").value("It's too late to change vote"));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.detail").value("It's too late to change your vote"));
     }
 
     @Test

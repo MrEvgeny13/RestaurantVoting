@@ -60,7 +60,7 @@ class AdminRestaurantControllerTest extends AbstractControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.get(REST_URL + 1)
                 .with(TestUtil.userHttpBasic(UserTestData.ADMIN)))
                 .andDo(print())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.detail").value("Restaurant not found by id 1"));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.detail").value("Restaurant is not found by id: 1"));
     }
 
     @Test
@@ -105,7 +105,7 @@ class AdminRestaurantControllerTest extends AbstractControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(JsonUtil.writeValue(created))
                 .with(TestUtil.userHttpBasic(UserTestData.ADMIN)))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.detail").value(created + " must be new (id=null)"));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.detail").value(created + " should be new (id = null)"));
     }
 
 }
