@@ -1,6 +1,6 @@
 # Voting System for restaurants
 
-**Topjava's graduation project**
+**Topjava's graduation project.**
 
 Design and implement a REST API using Hibernate/Spring/SpringMVC (or Spring-Boot) *without frontend*.
 
@@ -16,6 +16,23 @@ Build a voting system for deciding where to have lunch.
     - If it is after 11:00 then it is too late, vote can't be changed
 
 Each restaurant provides new menu each day.
+
+---
+
+### Recommendations for Tomcat:
+In Application context: **/voting**     
+URL after launch: **http://localhost:8080/voting/rest/admin/users/**
+
+---
+### Initial User data:
+
+| User          | Mail:Password          | 
+| ------------- |:------------------:    | 
+| Admin         | admin@mail.ru:password |  
+| User          | user@mail.ru:password  |    
+| User2         | user2@mail.ru:password |    
+
+---
 
 ## Curl samples: 
 
