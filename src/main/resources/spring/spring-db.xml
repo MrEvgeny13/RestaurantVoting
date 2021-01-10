@@ -18,8 +18,8 @@
 
     <tx:annotation-driven/>
 
-    <context:component-scan base-package="ru.javawebinar.graduation.repository"/>
-    <jpa:repositories base-package="ru.javawebinar.graduation.repository"/>
+    <context:component-scan base-package="ru.topjava.voting.repository"/>
+    <jpa:repositories base-package="ru.topjava.voting.repository"/>
 
     <context:property-placeholder location="classpath:db/hsqldb.properties" system-properties-mode="OVERRIDE"/>
 
@@ -33,7 +33,7 @@
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
           p:dataSource-ref="dataSource"
-          p:packagesToScan="ru.javawebinar.graduation.**.model">
+          p:packagesToScan="ru.topjava.voting.**.model">
 
         <property name="jpaPropertyMap">
             <map>
@@ -48,8 +48,6 @@
                 <entry key="#{T(org.hibernate.cfg.AvailableSettings).USE_SECOND_LEVEL_CACHE}" value="true"/>
                 <entry key="#{T(org.hibernate.cfg.AvailableSettings).USE_QUERY_CACHE}" value="false"/> <!--default-->
 
-                <!--<entry key="javax.persistence.validation.group.pre-persist" value="ru.javawebinar.graduation.View$Persist"/>-->
-                <!--<entry key="javax.persistence.validation.group.pre-update" value="ru.javawebinar.graduation.View$Persist"/>-->
 
             </map>
         </property>

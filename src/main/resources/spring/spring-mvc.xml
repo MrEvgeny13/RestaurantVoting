@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <bean class="ru.javawebinar.graduation.web.json.JacksonObjectMapper" id="objectMapper" factory-method="getMapper"/>
+    <bean class="ru.topjava.voting.web.json.JacksonObjectMapper" id="objectMapper" factory-method="getMapper"/>
 
     <mvc:annotation-driven conversion-service="conversionService">
         <mvc:message-converters>
@@ -22,12 +22,12 @@
     <bean class="org.springframework.format.support.FormattingConversionServiceFactoryBean" id="conversionService">
         <property name="formatters">
             <set>
-                <bean class="ru.javawebinar.graduation.web.converter.DateTimeFormatters.LocalTimeFormatter"/>
-                <bean class="ru.javawebinar.graduation.web.converter.DateTimeFormatters.LocalDateFormatter"/>
+                <bean class="ru.topjava.voting.web.converter.DateTimeFormatters.LocalTimeFormatter"/>
+                <bean class="ru.topjava.voting.web.converter.DateTimeFormatters.LocalDateFormatter"/>
             </set>
         </property>
     </bean>
 
-    <context:component-scan base-package="ru.javawebinar.**.web"/>
+    <context:component-scan base-package="ru.topjava.**.web"/>
 
 </beans>
