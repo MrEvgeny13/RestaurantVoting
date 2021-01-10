@@ -35,7 +35,7 @@ public class TestUtil {
 
     public static void mockAuthorize(User user) {
         SecurityContextHolder.getContext().setAuthentication(
-                new UsernamePasswordAuthenticationToken(new AuthorizedUser(user), null, user.getRoles()));
+                new UsernamePasswordAuthenticationToken(new AuthUser(user), null, user.getRoles()));
     }
 
     public static RequestPostProcessor userHttpBasic(User user) {

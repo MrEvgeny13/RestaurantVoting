@@ -1,17 +1,15 @@
 package ru.topjava.voting;
 
-
 import ru.topjava.voting.model.User;
 import ru.topjava.voting.to.UserTo;
 import ru.topjava.voting.util.UserUtil;
 
-
-public class AuthorizedUser extends org.springframework.security.core.userdetails.User{
+public class AuthUser extends org.springframework.security.core.userdetails.User{
 private static final long serialVersionUID = 1L;
 
 private UserTo userTo;
 
-public AuthorizedUser(User user) {
+public AuthUser(User user) {
         super(user.getEmail(), user.getPassword(), user.getRoles());
         this.userTo = UserUtil.asTo(user);
         }

@@ -8,7 +8,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
-import ru.topjava.voting.AuthorizedUser;
+import ru.topjava.voting.AuthUser;
 import ru.topjava.voting.model.User;
 import ru.topjava.voting.repository.UserRepository;
 import ru.topjava.voting.to.UserTo;
@@ -73,11 +73,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    public AuthorizedUser loadUserByUsername(String email) {
+    public AuthUser loadUserByUsername(String email) {
         User user = repository.getByEmail(email.toLowerCase());
         if (user == null) {
             throw new UsernameNotFoundException("User " + email + " is not found");
         }
-        return new AuthorizedUser(user);
+        return new AuthUser(user);
     }
 }

@@ -54,7 +54,6 @@ class AdminRestaurantControllerTest extends AbstractControllerTest {
                 .andExpect(status().isUnauthorized());
     }
 
-    // https://stackoverflow.com/questions/18336277/how-to-check-string-in-response-body-with-mockmvc
     @Test
     void getNotFound() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get(REST_URL + 1)
