@@ -2,7 +2,7 @@
 
 **Topjava's graduation project.**
 
-Designing and implementing a REST API using Hibernate/Spring/SpringMVC (or Spring-Boot) *without frontend*.
+Designing and implementing a REST API using Hibernate/Spring/SpringMVC *without frontend*.
 
 Building a voting system for deciding where to have lunch.
 
