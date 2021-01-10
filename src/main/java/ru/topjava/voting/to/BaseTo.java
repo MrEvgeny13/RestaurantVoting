@@ -1,8 +1,8 @@
 package ru.topjava.voting.to;
 
-import ru.topjava.voting.HasId;
+import ru.topjava.voting.HasUserId;
 
-public abstract class BaseTo implements HasId {
+public abstract class BaseTo implements HasUserId {
     protected Integer id;
 
     public BaseTo() {

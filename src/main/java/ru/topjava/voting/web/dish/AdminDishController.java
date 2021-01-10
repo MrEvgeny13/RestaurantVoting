@@ -70,5 +70,4 @@ public class AdminDishController {
                 .toUri();
         return ResponseEntity.created(uriOfNewResource).body(created);
     }
-
 }

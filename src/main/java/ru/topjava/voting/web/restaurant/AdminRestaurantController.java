@@ -65,5 +65,4 @@ public class AdminRestaurantController {
                 .toUri();
         return ResponseEntity.created(uriOfNewResource).body(created);
     }
-
 }

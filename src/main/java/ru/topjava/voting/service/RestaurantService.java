@@ -35,7 +35,7 @@ public class RestaurantService {
     }
 
     public Restaurant get(int id) {
-        return restaurantRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Restaurant not found by id " + id));
+        return restaurantRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Restaurant is not found by id: " + id));
     }
 
     @Transactional
@@ -53,8 +53,7 @@ public class RestaurantService {
     @Transactional
     @CacheEvict(value = "restaurants", allEntries = true)
     public Restaurant update(Restaurant restaurant) {
-        restaurantRepository.findById(restaurant.getId()).orElseThrow(() -> new EntityNotFoundException("Restaurant not found by id " + restaurant.getId()));
+        restaurantRepository.findById(restaurant.getId()).orElseThrow(() -> new EntityNotFoundException("Restaurant is not found by id: " + restaurant.getId()));
         return ValidationUtil.checkNotFoundWithId(restaurantRepository.save(restaurant), restaurant.getId());
     }
-
 }

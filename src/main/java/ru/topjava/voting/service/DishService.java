@@ -27,8 +27,8 @@ public class DishService {
 
     @CacheEvict(value = "restaurants", allEntries = true)
     public Dish create(Dish dish, int restaurantId) {
-        Assert.notNull(dish, "dish must not be null");
-        Restaurant restaurant = restaurantRepository.findById(restaurantId).orElseThrow(() -> new IllegalArgumentException("Restaurant not found by id " + restaurantId));
+        Assert.notNull(dish, "dish should not be null");
+        Restaurant restaurant = restaurantRepository.findById(restaurantId).orElseThrow(() -> new IllegalArgumentException("Restaurant is not found by id: " + restaurantId));
         dish.setRestaurant(restaurant);
         if (dish.getDate() == null) {
             dish.setDate(LocalDateTime.now());
@@ -42,13 +42,13 @@ public class DishService {
     }
 
     public Dish get(int id, int restId) {
-        return dishRepository.get(id, restId).orElseThrow(() -> new IllegalArgumentException("Dish not found by id " + id));
+        return dishRepository.get(id, restId).orElseThrow(() -> new IllegalArgumentException("Dish is not found by id: " + id));
     }
 
     @Transactional
     @CacheEvict(value = "restaurants", allEntries = true)
     public Dish update(Dish dish, int restaurantId) {
-        Assert.notNull(dish, "dish must not be null");
+        Assert.notNull(dish, "dish should not be null");
         dish.setRestaurant(restaurantRepository.getOne(restaurantId));
         ValidationUtil.checkNotFoundWithId(dishRepository.save(dish), dish.getId());
         return dish;
@@ -56,7 +56,6 @@ public class DishService {
     }
 
     public List<Dish> getAll(int restId) {
-        return dishRepository.getAll(restId).orElseThrow(() -> new IllegalArgumentException("not found dishes with restaurant id " + restId));
+        return dishRepository.getAll(restId).orElseThrow(() -> new IllegalArgumentException("not found dishes with restaurant id: " + restId));
     }
-
 }

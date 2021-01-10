@@ -22,12 +22,11 @@ public class SecurityUtil {
 
     public static AuthorizedUser get() {
         AuthorizedUser user = safeGet();
-        requireNonNull(user, "No authorized user found");
+        requireNonNull(user, "An authorized user is not found");
         return user;
     }
 
     public static int authUserId() {
         return get().getUserTo().getId();
     }
-
 }

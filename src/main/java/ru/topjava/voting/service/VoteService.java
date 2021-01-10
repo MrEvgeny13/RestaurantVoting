@@ -38,11 +38,11 @@ public class VoteService {
     }
 
     public List<VoteTo> getBetweenDates(@Nullable LocalDate startDate, @Nullable LocalDate endDate) {
-        return VoteUtil.asTo(voteRepository.getAllBetweenDate(startDate, endDate).orElseThrow(() -> new IllegalArgumentException("not found votes for period from [ " + startDate + " ] to [ " + endDate + " ]")));
+        return VoteUtil.asTo(voteRepository.getAllBetweenDate(startDate, endDate).orElseThrow(() -> new IllegalArgumentException("not found votes for the period from [ " + startDate + " ] to [ " + endDate + " ]")));
     }
 
     public List<VoteTo> getBetweenDatesByUser(int userId, LocalDate startDate, LocalDate endDate) {
-        return VoteUtil.asTo(voteRepository.getAllBetweenDateWithUserId(userId, startDate, endDate).orElseThrow(() -> new IllegalArgumentException("not found votes for period from [ " + startDate + " ] to [ " + endDate + " ] and user id : \" + userId")));
+        return VoteUtil.asTo(voteRepository.getAllBetweenDateWithUserId(userId, startDate, endDate).orElseThrow(() -> new IllegalArgumentException("not found votes for the period from [ " + startDate + " ] to [ " + endDate + " ] and user id : \" + userId")));
     }
 
     @Transactional
@@ -50,7 +50,7 @@ public class VoteService {
         Vote vote = voteRepository.get(date, userId);
 
         if (voteTo.isNew() && vote != null) {
-            throw new DoubleViolationException("Have you already voted today");
+            throw new DoubleViolationException("You have already voted today");
         }
         if (!voteTo.isNew() && vote != null) {
             ValidationUtil.checkTimeForOperations(LocalTime.now());
@@ -65,6 +65,4 @@ public class VoteService {
 
         return VoteUtil.asTo(voteRepository.save(vote));
     }
-
-
 }

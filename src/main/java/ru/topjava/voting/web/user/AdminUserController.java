@@ -56,5 +56,4 @@ public class AdminUserController extends AbstractUserController {
     public void update(@RequestBody User user, @PathVariable int id) {
         super.update(user, id);
     }
-
 }

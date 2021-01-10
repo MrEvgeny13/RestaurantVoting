@@ -28,5 +28,4 @@ public class AdminVoteController {
         log.info("get today Vote for all users");
         return service.getBetweenDates(LocalDate.now(), LocalDate.now());
     }
-
 }

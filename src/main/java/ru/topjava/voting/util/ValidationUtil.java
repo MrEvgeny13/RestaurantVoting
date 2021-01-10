@@ -1,6 +1,6 @@
 package ru.topjava.voting.util;
 
-import ru.topjava.voting.HasId;
+import ru.topjava.voting.HasUserId;
 import ru.topjava.voting.util.exception.IllegalRequestDataException;
 import ru.topjava.voting.util.exception.NotFoundException;
 import ru.topjava.voting.util.exception.VoteTimeViolationException;
@@ -37,18 +37,18 @@ public class ValidationUtil {
         }
     }
 
-    public static void checkNew(HasId entity) {
+    public static void checkNew(HasUserId entity) {
         if (!entity.isNew()) {
-            throw new IllegalRequestDataException(entity + " must be new (id=null)");
+            throw new IllegalRequestDataException(entity + " should be new (id = null)");
         }
     }
 
-    public static void assureIdConsistent(HasId entity, int id) {
+    public static void assureIdConsistent(HasUserId entity, int id) {
 //      http://stackoverflow.com/a/32728226/548473
         if (entity.isNew()) {
             entity.setId(id);
         } else if (entity.getId() != id) {
-            throw new IllegalArgumentException(entity + " must be with id=" + id);
+            throw new IllegalArgumentException(entity + " should be with id = " + id);
         }
     }
 
@@ -65,7 +65,7 @@ public class ValidationUtil {
 
     public static void checkTimeForOperations(LocalTime time) {
         if (time.isAfter(DEADLINE_TIME)) {
-            throw new VoteTimeViolationException("It's too late to change vote");
+            throw new VoteTimeViolationException("It's too late to change your vote");
         }
     }
 
@@ -76,5 +76,4 @@ public class ValidationUtil {
     public static void setDeadLineTime(LocalTime time) {
         DEADLINE_TIME = time;
     }
-
 }

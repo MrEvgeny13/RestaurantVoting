@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public User create(User user) {
-        Assert.notNull(user, "user must not be null");
+        Assert.notNull(user, "user should not be null");
         return repository.save(UserUtil.prepareToSave(user, passwordEncoder));
     }
 
@@ -45,18 +45,18 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public User get(int id) {
-        return repository.findById(id).orElseThrow(() -> new EntityNotFoundException("User not found by id " + id));
+        return repository.findById(id).orElseThrow(() -> new EntityNotFoundException("User is not found by id: " + id));
     }
 
     @Override
     public User getByEmail(String email) {
-        Assert.notNull(email, "email must not be null");
+        Assert.notNull(email, "email should not be null");
         return ValidationUtil.checkNotFound(repository.getByEmail(email), "email=" + email);
     }
 
     @Override
     public void update(User user) {
-        Assert.notNull(user, "user must not be null");
+        Assert.notNull(user, "user should not be null");
         ValidationUtil.checkNotFoundWithId(repository.save(UserUtil.prepareToSave(user, passwordEncoder)), user.getId());
     }
 
@@ -80,5 +80,4 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         }
         return new AuthorizedUser(user);
     }
-
 }

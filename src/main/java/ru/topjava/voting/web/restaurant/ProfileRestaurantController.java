@@ -38,5 +38,4 @@ public class ProfileRestaurantController {
     private static LocalDate checkDate(LocalDate date) {
         return date == null ? LocalDate.now() : date;
     }
-
 }

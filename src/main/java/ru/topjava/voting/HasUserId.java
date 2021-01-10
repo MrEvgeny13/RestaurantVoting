@@ -1,6 +1,6 @@
 package ru.topjava.voting;
 
-public interface HasId {
+public interface HasUserId {
     Integer getId();
 
     void setId(Integer id);
@@ -8,5 +8,4 @@ public interface HasId {
     default boolean isNew() {
         return getId() == null;
     }
-
 }

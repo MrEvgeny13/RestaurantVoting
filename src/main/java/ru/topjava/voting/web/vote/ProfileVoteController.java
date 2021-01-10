@@ -63,5 +63,4 @@ public class ProfileVoteController {
         log.info("get today Vote for user {}", authUserId());
         return service.getVote(authUserId(), LocalDate.now());
     }
-
 }

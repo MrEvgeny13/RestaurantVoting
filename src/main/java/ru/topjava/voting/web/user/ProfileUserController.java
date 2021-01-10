@@ -44,5 +44,4 @@ public class ProfileUserController extends AbstractUserController {
     public void delete(@AuthenticationPrincipal AuthorizedUser authorizedUser) {
         super.delete(authorizedUser.getUserTo().getId());
     }
-
 }

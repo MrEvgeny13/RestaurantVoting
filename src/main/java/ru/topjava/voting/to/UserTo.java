@@ -17,7 +17,7 @@ public class UserTo extends BaseTo {
     @Email
     @NotBlank
     @Size(max = 100)
-    @SafeHtml // https://stackoverflow.com/questions/17480809
+    @SafeHtml
     private String email;
 
     @Size(min = 5, max = 32)

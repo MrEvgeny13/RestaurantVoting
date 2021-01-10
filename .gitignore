@@ -2,5 +2,6 @@
 out
 target
 *.iml
+*.iws
 log
 *.patch

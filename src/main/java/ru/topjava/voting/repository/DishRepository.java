@@ -31,4 +31,3 @@ public interface DishRepository extends JpaRepository<Dish, Integer> {
     Dish save(Dish entity);
 
 }
-
