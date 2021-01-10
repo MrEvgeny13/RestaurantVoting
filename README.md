@@ -4,7 +4,7 @@
 
 Designing and implementing a REST API using Hibernate/Spring/SpringMVC (or Spring-Boot) *without frontend*.
 
-Build a voting system for deciding where to have lunch.
+Building a voting system for deciding where to have lunch.
 
 - 2 types of users: admin and regular users
 - Admin can input a restaurant and it's lunch menu of the day (2-5 items usually, just a dish name and price)
