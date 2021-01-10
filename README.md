@@ -19,7 +19,6 @@ Each restaurant provides new menu each day.
 
 ## Curl samples: 
 
----
 
 ### *Users with the Admin role:*
 #### Get all Users:
