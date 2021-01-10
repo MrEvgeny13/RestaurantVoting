@@ -1,4 +1,4 @@
-# The voting system for restaurants
+# Voting System for restaurants
 
 **Topjava's graduation project**
 
