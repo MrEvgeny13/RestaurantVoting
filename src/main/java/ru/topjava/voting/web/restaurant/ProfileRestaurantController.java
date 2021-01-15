@@ -32,7 +32,7 @@ public class ProfileRestaurantController {
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Restaurant> getAll(@RequestParam(value = "date", required = false) LocalDate date) {
         log.info("get all restaurants");
-        return service.getAll(checkDate(date));
+        return service.getAllWithDish(checkDate(date));
     }
 
     private static LocalDate checkDate(LocalDate date) {

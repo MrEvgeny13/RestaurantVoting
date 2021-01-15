@@ -33,7 +33,7 @@ class ProfileRestaurantControllerTest extends AbstractControllerTest {
                 .andExpect(status().isOk())
                 .andDo(print())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
-        assertMatch(restaurantService.getAll(of(2020, Month.DECEMBER, 22)), Arrays.asList(RestaurantTestData.RESTAURANT1));
+        assertMatch(restaurantService.getAllWithDish(of(2020, Month.DECEMBER, 22)), Arrays.asList(RestaurantTestData.RESTAURANT1));
     }
 
     @Test
@@ -53,6 +53,6 @@ class ProfileRestaurantControllerTest extends AbstractControllerTest {
                 .andExpect(status().isOk())
                 .andDo(print())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
-        assertMatch(restaurantService.getAll(LocalDate.now()), Arrays.asList(RestaurantTestData.RESTAURANT2, RestaurantTestData.RESTAURANT3));
+        assertMatch(restaurantService.getAllWithDish(LocalDate.now()), Arrays.asList(RestaurantTestData.RESTAURANT2, RestaurantTestData.RESTAURANT3));
     }
 }

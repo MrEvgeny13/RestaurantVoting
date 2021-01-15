@@ -22,7 +22,7 @@ public class RestaurantService {
     private RestaurantRepository restaurantRepository;
 
     @Cacheable("restaurants")
-    public List<Restaurant> getAll(LocalDate date) {
+    public List<Restaurant> getAllWithDish(LocalDate date) {
         return restaurantRepository.findAllWithDish(date);
     }
 
