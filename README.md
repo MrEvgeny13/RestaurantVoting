@@ -92,16 +92,16 @@ curl -s -X DELETE http://localhost:8080/voting/rest/admin/restaurants/100021 --u
 ---
 
 ### *Restaurants with the User role:*
-#### Get all Restaurants for today:
+#### Get all Restaurants (with Dishes) for today:
 curl -s http://localhost:8080/voting/rest/restaurants --user user@mail.ru:password
 
-#### Get Restaurant 100004 for today:
+#### Get Restaurant 100004 (with Dishes) for today:
 curl -s http://localhost:8080/voting/rest/restaurants/100004 --user user@mail.ru:password
 
-#### Get Restaurant 100005 with a dish for the date 2021-01-10 (you can request the current date):
+#### Get Restaurant 100005 (with Dishes) for the date 2021-01-10 (you can request the current date):
 curl -s http://localhost:8080/voting/rest/restaurants/100005?date=2021-01-10 --user user@mail.ru:password
 
-#### Get all Restaurants with a dish for the date 2021-01-10 (you can request the current date):
+#### Get all Restaurants (with Dishes) for the date 2021-01-10 (you can request the current date):
 curl -s http://localhost:8080/voting/rest/restaurants?date=2021-01-10 --user user@mail.ru:password
 
 ---
@@ -137,7 +137,7 @@ curl -s -X POST -d '{"restaurantId":"100005"}' -H "Content-Type:application/json
 #### Change Vote for the Restaurant 100005:
 curl -s -X PUT -d '{"restaurantId":"100005"}' -H "Content-Type:application/json;charset=UTF-8" http://localhost:8080/voting/rest/votes/100018 --user user@mail.ru:password
 
-#### Get Votes for today:
+#### Get Votes for today for the User:
 curl -s http://localhost:8080/voting/rest/votes/ --user user@mail.ru:password
 
 #### Filter Votes (you can request the current date in "endDate"):
